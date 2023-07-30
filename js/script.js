@@ -1,6 +1,7 @@
 Vue.createApp({
     data () {
         return {
+            newMails: [],
             emailList: []
         }
     },
@@ -10,7 +11,11 @@ Vue.createApp({
             axios
             .get("https://flynn.boolean.careers/exercises/api/random/mail")
             .then((axiosResp) => {
-                this.emailList.push(axiosResp.data.response);
+                this.newMails.push(axiosResp.data.response);
+
+                if(this.newMails.length === 10) {
+                    this.emailList = this.newMails;
+                }
             });
         }     
     }
