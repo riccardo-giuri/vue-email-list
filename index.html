@@ -20,7 +20,10 @@
                     
                     <div class="col-6">
                         <ul class="list-group">
-                            <li class="list-group-item text-center">ciao </li>
+                            <li class="list-group-item text-center"
+                                v-for="mail in emailList">
+                                {{ mail }}
+                            </li>
                         </ul>
                     </div>
                 </div>
